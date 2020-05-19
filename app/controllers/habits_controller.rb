@@ -2,6 +2,7 @@ class HabitsController < ApplicationController
    #read
     get '/habits' do
         if logged_in?
+            @habits = Habits.all
             erb :"habits/habits_index"            
         else
             redirect "/login"
@@ -11,7 +12,7 @@ class HabitsController < ApplicationController
     get '/habits/:id'
         if logged_in?
             @habit = Habit.find_by(id: params[:id])
-            redirect '/habits/show_habit'
+            erb :'/habits/show_habit'
         else
             redirect "/login"
         end
