@@ -1,44 +1,37 @@
 class UsersController < ApplicationController
     
-    get '/users/:slug' do
-        @user = User.find_by_slug(params[:slug])
+    get '/users/:id' do
+        @user = User.find_by(id: params[:id])
         erb :'/users/show'
     end
 
     get '/login' do
-        if !logged_in?
-            erb :'/users/login'
-        else
-            redirect "/show" #displays a users page
-        end
+            erb :'/users/login'        
     end
 
     post '/login' do
-        user = User.find_by(username: params[:username])
+        user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect "/show"
+            redirect "/users/#{user.id}"
         else
             redirect "/signup"
         end
     end
 
     get '/signup' do
-        if !logged_in?
             erb :'/users/create_user'        
-        else
-            redirect '/show'
-        end
     end
 
     post '/signup' do
         if params[:name] == "" || params[:email] == "" || params[:password] == ""
-            redirect '/signup'
+           #raise error
+            redirect "/signup"
         else
             @user= User.new(name: params[:name], email: params[:email], password: params[:password])
             @user.save
             session[:user_id] = @user.id
-            redirect '/show'
+            redirect "/users/#{@user.id}"
         end
     end
 
