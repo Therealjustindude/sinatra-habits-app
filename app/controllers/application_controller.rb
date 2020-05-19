@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     
     def logout
       session.clear
-      redirect '/index.erb'
+      redirect '/welcome.erb'
     end
   end
 
