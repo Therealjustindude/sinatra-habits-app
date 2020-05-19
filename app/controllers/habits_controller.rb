@@ -17,4 +17,6 @@ class HabitsController < ApplicationController
             redirect "/login"
         end
     end
+
+    
 end
