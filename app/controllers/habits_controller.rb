@@ -26,13 +26,26 @@ class HabitsController < ApplicationController
         @habit = Habit.find_by(id: params[:id])
         if logged_in?
             if @habit.user == @current_user
-                 redirect "/habits/#{@current_user.id}"
+                erb :'habits/edit_habit'
             else
                  redirect "user/#{@current_user.id}"
             end
          else
              redirect "/"
          end
+    end
+
+    patch '/habits/:id' do
+        @habit = Habit.find_by(id: params[:id])
+        if logged_in?
+            if @habit.user == @current_user
+                @habit.update(habit: params[:habit])
+        
+                redirect "/habits"
+            else
+            end
+        else
+        end
     end
 
     
