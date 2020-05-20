@@ -10,12 +10,29 @@ class HabitsController < ApplicationController
     end
 
     get '/habits/:id' do
+        @habit = Habit.find_by(id: params[:id])
         if logged_in?
-            @habit = Habit.find_by(id: params[:id])
-            erb :'/habits/show_habit'
+           if @habit.user == @current_user
+                erb :'/habits/show_habit'
+           else
+                redirect "user/#{@current_user.id}"
+           end
         else
             redirect "/login"
         end
+    end
+
+    get '/habits/:id/edit' do
+        @habit = Habit.find_by(id: params[:id])
+        if logged_in?
+            if @habit.user == @current_user
+                 redirect "/habits/#{@current_user.id}"
+            else
+                 redirect "user/#{@current_user.id}"
+            end
+         else
+             redirect "/"
+         end
     end
 
     
