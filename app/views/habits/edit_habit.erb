@@ -1,5 +1,5 @@
 <form action="/habits/<%=@habit.user_id%>" method="POST">
 <input type="hidden" name="_method" value="PATCH">
-    <textarea name="habit id="edit_habit"><%=@habit.habit%></textarea>
+    <textarea name="habit" id="edit_habit"><%=@habit.habit%></textarea>
     <input type="submit" value="Update Habit">
 </form>
