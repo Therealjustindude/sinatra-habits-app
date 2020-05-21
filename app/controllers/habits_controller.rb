@@ -40,11 +40,11 @@ class HabitsController < ApplicationController
         if logged_in?
             if @habit.user == @current_user
                 @habit.update(habit: params[:habit])
-        
                 redirect "/habits"
             else
             end
         else
+            redirect "/"
         end
     end
 
