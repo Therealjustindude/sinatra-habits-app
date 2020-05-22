@@ -3,3 +3,8 @@
     <textarea name="habit" id="edit_habit"><%=@habit.habit%></textarea>
     <input type="submit" value="Update Habit">
 </form>
+
+<form method="post" action="/habits/<%=@habit.id%>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Habit">
+</form>
