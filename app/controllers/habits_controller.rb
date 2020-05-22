@@ -13,6 +13,7 @@ class HabitsController < ApplicationController
 
     post '/habits' do 
         redirect "/login" if !logged_in?
+        redirect "/habits" if params[:habit] == "" #raise error if empty
             @habit = Habit.new(habit: params[:habit],user_id: @current_user.id)
             @habit.save
             redirect "/habits"
@@ -41,7 +42,7 @@ class HabitsController < ApplicationController
     patch '/habits/:id' do
         @habit = Habit.find_by(id: params[:id])
         redirect "/" if !logged_in?
-            if @habit.user == @current_user
+            if @habit.user == @current_user && params[:habit] != ""
                 @habit.update(habit: params[:habit])
                 redirect "/habits"
             else
