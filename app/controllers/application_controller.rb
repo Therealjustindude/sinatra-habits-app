@@ -25,6 +25,24 @@ class ApplicationController < Sinatra::Base
     def current_user
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
+
+    def verify_user_logged_in
+      if !logged_in?
+        flash[:error] = "You must be logged in to continue."
+        redirect '/login'
+      end
+    end
+
+    def verify_current_user
+      if @current_user.id != session[:user_id]
+        flash[:error] = "You don't have permission to edit."
+        redirect "users/#{@current_user.id}"
+      end
+    end
+
+    def find_habit
+      @habit = Habit.find_by(id: params[:id])
+    end
   end
 
 end
