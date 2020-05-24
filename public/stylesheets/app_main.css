@@ -33,7 +33,7 @@
  /* Navbar links */
  
  .topnav a {
-     float: left;
+     float: center;
      display: block;
      color: black;
      text-align: center;
@@ -98,7 +98,7 @@
      /* 18px / 800px */
      width: 85%;
  }
- /* --- Login Page Styles --- */
+ /* --- Login/signup Page Styles --- */
  
  .login-container {
      border-radius: 5px;
@@ -162,4 +162,21 @@
  #signup {
      padding: 12px 20px;
      display: inline-block;
+ }
+ /* --- User Show Page Styles --- */
+ 
+ #userheading {
+     text-align: center;
+     padding: 50px 50px 50px;
+     color: rgb(37, 25, 25);
+ }
+ 
+ .currenthabits {
+     padding: 12px 12px 12px 0;
+     display: inline-block;
+ }
+ 
+ .show-container {
+     border-radius: 5px;
+     padding: 20px;
  }
