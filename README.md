@@ -22,6 +22,7 @@ Habitual Habits is a Model-View-Controller Sinatra application that allows a use
 - Go to your browser and enter ```localhost:9393``` into your search bar to view the application.
 
 ## Built With
+* [sinatra-flash](https://github.com/SFEley/sinatra-flash)
 * [Corneal](https://github.com/thebrianemory/corneal)
 * [dotenv](https://github.com/motdotla/dotenv)
 * [sysrandom](https://github.com/cryptosphere/sysrandom)
