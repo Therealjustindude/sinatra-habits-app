@@ -1,66 +1,33 @@
+# Habitual Habits
 
-create .env file and add this line "SESSION_SECRET = Sysrandom.base64(32)"
+This is a web application I created as a Flatiron School of Engineering student, as part of the SQL/ActiveRecord/ORM/MVC/Sinatra module.
 
-# Project Title
-
-One Paragraph of project description goes here
+Habitual Habits is a Model-View-Controller Sinatra application that allows a user to sign up, log in, create a habit, read/view their habits, edit their habits, and delete their habits (CRUD).
 
 ## Getting Started
 
-install and utilize 
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-run bundle 
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+- Fork and clone repo to your local machine.
+- Use ```bundle install``` to install dependencies.
+- create a .env file and add this ```SESSION_SECRET = Sysrandom.base64(32)```
+- create a .gitignore and add both ```.env``` and 
+```db/development.sqlite``` to the file 
 
-Say what the step will be
+### Usage
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- Change directories into this application
+- Run ```rake db:mirgrate``` from the command line
+- Run ```shotgun``` from the command line 
+- Go to your browser and enter ```localhost:9393``` into your search bar to view the application.
 
 ## Built With
-give shout out to corneal
+* [Corneal](https://github.com/thebrianemory/corneal)
+* [dotenv](https://github.com/motdotla/dotenv)
+* [sysrandom](https://github.com/cryptosphere/sysrandom)
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
