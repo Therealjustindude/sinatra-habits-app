@@ -4,6 +4,7 @@
      list-style: none;
      margin: 0;
      padding: 0;
+     box-sizing: border-box;
  }
  
  html,
@@ -12,6 +13,15 @@
      width: 100%;
  }
  /* --- Layout Page Styles --- */
+ 
+ @media screen and (max-width: 600px) {
+     .col-25,
+     .col-75,
+     input[type=submit] {
+         width: 100%;
+         margin-top: 0;
+     }
+ }
  /* The navbar container */
  
  .topnav {
@@ -89,3 +99,67 @@
      width: 85%;
  }
  /* --- Login Page Styles --- */
+ 
+ .login-container {
+     border-radius: 5px;
+     background-color: rgba(161, 139, 139, 0.479);
+     padding: 20px;
+ }
+ 
+ .col-25 {
+     float: left;
+     width: 25%;
+     margin-top: 6px;
+ }
+ 
+ .col-75 {
+     float: left;
+     width: 75%;
+     margin-top: 6px;
+ }
+ 
+ .row:after {
+     content: "";
+     display: table;
+     clear: both;
+ }
+ 
+ label {
+     padding: 12px 12px 12px 0;
+     display: inline-block;
+ }
+ 
+ input[type=text] {
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #3B4259;
+     border-radius: 4px;
+     resize: vertical;
+ }
+ 
+ input[type=password] {
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #3B4259;
+     border-radius: 4px;
+     resize: vertical;
+ }
+ 
+ input[type=submit] {
+     background-color: #3B4259;
+     color: white;
+     padding: 12px 20px;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     float: right;
+ }
+ 
+ input[type=submit]:hover {
+     background-color: rgba(65, 187, 243, 0.479);
+ }
+ 
+ #signup {
+     padding: 12px 20px;
+     display: inline-block;
+ }
