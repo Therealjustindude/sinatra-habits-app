@@ -19,7 +19,7 @@
     <% if logged_in? %>
       <div class="topnav">
         <a href="/habits">Go to Habits</a>
-        <a href="/new_habit">Create Habit</a>
+        <a href="/habits/new">Create Habit</a>
         <a href="/logout">Log Out</a>
       
       </div>
@@ -33,6 +33,7 @@
         <p style="color: #8C251C;"><%= flash[:errors] %></p>
       <%end%>
       
+      <br>
 
         <%= yield %>
 
