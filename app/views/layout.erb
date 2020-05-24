@@ -25,6 +25,13 @@
       </div>
     <%end%>
       <br>
+
+      <% if flash[:message] %>
+        <p style="color: #8C251C;"><%= flash[:message] %></p>
+      <%end%>
+      <% if flash[:errors] %>
+        <p style="color: #8C251C;"><%= flash[:errors] %></p>
+      <%end%>
       
 
         <%= yield %>
