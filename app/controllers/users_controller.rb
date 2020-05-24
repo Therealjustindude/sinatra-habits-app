@@ -2,12 +2,10 @@ class UsersController < ApplicationController
     
     get '/users/:id' do
          #raise error- your not logged in - log in to view this page
-            if logged_in?
-                @user = User.find_by(id: params[:id])
-                 erb :'/users/show'
-            else
-                redirect "/login"
-            end
+         verify_user_logged_in
+         verify_current_user
+            @user = User.find_by(id: params[:id])
+            erb :'/users/show'
     end
 
     get '/login' do
@@ -20,7 +18,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
-            #a user might have entered password wrong
+            flash[:error] = "Your email or password does not match"
             redirect "/login"
         end
     end
@@ -30,14 +28,16 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        redirect "/signup" if !params[:name] == "" || !params[:email] == "" || !params[:password] == ""
-                @user= User.new(name: params[:name], email: params[:email], password: params[:password])
+        if params[:name] == "" || params[:email] == "" || params[:password] == ""
+            flash[:message] = "Please do not leave anything blank"
+            redirect "/signup"
+         else
+            @user= User.new(name: params[:name], email: params[:email], password: params[:password])
                 if @user.save
                     session[:user_id] = @user.id
-                    redirect "/users/#{@user.id}"
-                else
-                    redirect "/signup"
+                    redirect "/users/#{@user.id}" 
                 end
+         end
     end
 
     get '/logout' do
