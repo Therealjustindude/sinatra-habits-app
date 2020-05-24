@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     
     get '/users/:id' do
-         #raise error- your not logged in - log in to view this page
          verify_user_logged_in
          verify_current_user
             @user = User.find_by(id: params[:id])
