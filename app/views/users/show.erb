@@ -1,3 +1,15 @@
-<h1><%=@user.name%> you are logged in! </h1>
+<div class="show-container">
+<h1 id="userheading">Welcome Back <%=@user.name%>!</h1>
 
-<!-- maybe show all users habits here>
+
+    <div class="currenthabits">
+    <label for="currenthabits">Here are your current habits:</label>
+     <%@user.habits.each do |h|%>
+        <ul>
+            <li><%= h.habit%></li>
+        <ul>
+     <%end%>
+    </div>
+
+</div>
+
