@@ -33,14 +33,14 @@
  /* Links - change color on hover */
  
  .topnav a:hover {
-     background-color: #F2E3B3;
-     color: #BF80A9;
+     background-color: #BF9169;
+     color: #3B4259;
  }
  /* --- Welcome Page Styles --- */
  
  body {
-     background-color: #A69185;
-     color: black;
+     background-color: #292F40;
+     color: #3B4259;
      font-family: Sans-Serif;
      line-height: 18px;
  }
@@ -48,7 +48,7 @@
  #homeheading {
      text-align: center;
      padding: 50px 50px 50px;
-     color: #BF80A9;
+     color: rgb(37, 25, 25);
      box-shadow: 0 2px 14px 0 rgb(202, 204, 204), 0 5px 14px 0 rgb(100, 100, 100);
  }
  
@@ -61,15 +61,20 @@
  
  .button {
      border-radius: 20px;
-     color: #BF80A9;
+     color: black;
      padding: 20px 32px;
-     box-shadow: 0 2px 14px 0 #D9D382, 0 5px 14px 0 #D9D382;
+     box-shadow: 0 2px 14px 0 rgb(202, 204, 204), 0 5px 14px 0 #BF9169;
      text-align: center;
      text-decoration: none;
      display: inline-block;
      font-size: 16px;
      margin: 4px 2px;
      cursor: pointer;
+ }
+ 
+ .button:hover {
+     background-color: #BF9169;
+     color: #3B4259;
  }
  
  .wrapper {
@@ -79,7 +84,8 @@
      box-shadow: 0 0 10px rgba(0, 0, 0, .3);
      margin: 16px auto;
      max-width: 960px;
-     padding: 2.25%;
+     padding: 5%;
      /* 18px / 800px */
      width: 85%;
  }
+ /* --- Login Page Styles --- */
