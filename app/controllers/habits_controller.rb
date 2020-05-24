@@ -1,18 +1,21 @@
 class HabitsController < ApplicationController
    #read
     get '/habits' do
-        redirect "/login" if !logged_in?
+        verify_user_logged_in
+        verify_current_user
             @habits = current_user.habits
             erb :"habits/habits_index"            
     end
 
     get '/habits/new' do
-        redirect "/login" if !logged_in?
+        verify_user_logged_in
+        verify_current_user
              erb :'/habits/create_habit'
     end
 
     post '/habits' do 
-        redirect "/login" if !logged_in?
+        verify_user_logged_in
+        verify_current_user
         redirect "/habits" if params[:habit] == "" #raise error if empty
             @habit = Habit.new(habit: params[:habit],user_id: @current_user.id)
             @habit.save
@@ -20,45 +23,38 @@ class HabitsController < ApplicationController
     end
 
     get '/habits/:id' do
-        @habit = Habit.find_by(id: params[:id])
-        redirect "/login" if !logged_in?
-           if @habit.user == @current_user
-                erb :'/habits/show_habit'
-           else
-                redirect "user/#{@current_user.id}"
-           end
+        find_habit
+        verify_user_logged_in
+        verify_current_user
+            erb :'/habits/show_habit'
+      
     end
 
     get '/habits/:id/edit' do
-        @habit = Habit.find_by(id: params[:id])
-        redirect "/" if !logged_in?
-            if @habit.user == @current_user
-                erb :'habits/edit_habit'
-            else
-                 redirect "user/#{@current_user.id}"
-            end
+        find_habit
+        verify_user_logged_in
+        verify_current_user
+            erb :'habits/edit_habit'
+       
     end
 
     patch '/habits/:id' do
-        @habit = Habit.find_by(id: params[:id])
-        redirect "/" if !logged_in?
+        find_habit
+        verify_user_logged_in
             if @habit.user == @current_user && params[:habit] != ""
                 @habit.update(habit: params[:habit])
                 redirect "/habits"
             else
-                redirect "user/#{@current_user.id}"
+                redirect "users/#{@current_user.id}"
             end
     end
 
     delete '/habits/:id' do
-        @habit = Habit.find_by(id: params[:id])
-        redirect "/" if !logged_in?
-            if @habit.user == @current_user
+        find_habit
+        verify_user_logged_in
+        verify_current_user
                 @habit.destroy
                 redirect "/habits"
-            else
-                redirect "user/#{@current_user.id}"
-            end
     end
     
 end
