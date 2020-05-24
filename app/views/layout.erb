@@ -11,18 +11,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/app_main.css" />
   </head>
   <body>
     <div class="wrapper">
-      <div class="nav">
-      <% if logged_in? %>
-        <a href="/habits">Go to Habits</a>
-        <a href="/logout">Log Out</a>
-        <%# <a href="/new_habit"> %>
-      <%end%>
 
+    <% if logged_in? %>
+      <div class="topnav">
+        <a href="/habits">Go to Habits</a>
+        <a href="/new_habit">Create Habit</a>
+        <a href="/logout">Log Out</a>
+      
       </div>
+    <%end%>
+      <br>
+      
 
         <%= yield %>
 
