@@ -71,10 +71,11 @@
  }
  
  .button {
-     border-radius: 20px;
-     color: black;
-     padding: 20px 32px;
-     box-shadow: 0 2px 14px 0 rgb(202, 204, 204), 0 5px 14px 0 #BF9169;
+     color: #BF9169;
+     background-color: #3B4259;
+     padding: 12px 20px;
+     border: none;
+     border-radius: 6px;
      text-align: center;
      text-decoration: none;
      display: inline-block;
@@ -222,14 +223,6 @@
      border-style: outset;
      box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
  }
- /* .index-habits li {
-     display: inline-block;
-     color: #BF9169;
-     border-radius: 12px;
-     text-align: center;
-     padding: 5px;
-     text-decoration: none;
- } */
  
  .index-habits a {
      background-color: #3B4259;
@@ -247,3 +240,46 @@
      background-color: #BF9169;
      color: rgba(140, 37, 28, 0.863);
  }
+ /* --- Habit Show Page Styles --- */
+ 
+ .hab-container {
+     padding: 40px;
+     text-align: left;
+     background-color: rgba(255, 255, 255, 0.753);
+     border-color: rgba(140, 37, 28, 0.87);
+     border-style: outset;
+     box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
+ }
+ 
+ .hab-heading h2 {
+     padding: 40px;
+     text-align: center;
+     text-decoration: underline #3B4259;
+     background-color: rgba(255, 255, 255, 0.753);
+     border-color: rgba(140, 37, 28, 0.87);
+     border-style: outset;
+     box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
+ }
+ 
+ #edit-btn {
+     background-color: #3B4259;
+     color: #BF9169;
+     padding: 4px;
+     text-align: center;
+     text-decoration: none;
+     border-style: outset;
+     border-color: #BF9169;
+     display: block;
+ }
+ 
+ #delete-btn {
+     background-color: #3B4259;
+     color: #BF9169;
+     padding: 4px;
+     text-align: center;
+     text-decoration: none;
+     border-style: outset;
+     border-color: #BF9169;
+     display: block;
+ }
+ /* --- Edit Habit Page Styles --- */
