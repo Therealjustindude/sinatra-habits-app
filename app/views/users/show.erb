@@ -5,9 +5,11 @@
     <div class="current-habits">
     <h3 id="userheading">Current Habits</h3>
      <%@user.habits.each do |h|%>
-        <ul>
-            <li><a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit%></a></li>
-        <ul>
+   
+
+            <a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit%></a></li>
+
+        <br>
      <%end%>
     </div>
 
