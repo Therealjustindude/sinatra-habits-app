@@ -2,9 +2,13 @@ class UsersController < ApplicationController
     
     get '/users/:id' do
          verify_user_logged_in
-         verify_current_user
+         if @current_user.id != session[:user_id]
+            flash[:error] = "You don't have     permission."
+            redirect "users/#{@current_user.id}"
+         else
             @user = User.find_by(id: params[:id])
             erb :'/users/show'
+         end
     end
 
     get '/login' do
@@ -31,7 +35,7 @@ class UsersController < ApplicationController
             flash[:message] = "Please do not leave anything blank"
             redirect "/signup"
          else
-            @user= User.new(name: params[:name], email: params[:email], password: params[:password])
+            @user= User.new(name: params[:name].downcase, email: params[:email], password: params[:password])
                 if @user.save
                     session[:user_id] = @user.id
                     redirect "/users/#{@user.id}" 
