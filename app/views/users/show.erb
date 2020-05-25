@@ -3,10 +3,10 @@
 
 
     <div class="currenthabits">
-    <label for="currenthabits">Here are your current habits:</label>
+    <h4 id="userheading">Here are your current habits:</h4>
      <%@user.habits.each do |h|%>
         <ul>
-            <li><%= h.habit%></li>
+            <li><a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit%></a></li>
         <ul>
      <%end%>
     </div>
