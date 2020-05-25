@@ -168,15 +168,31 @@
  #userheading {
      text-align: center;
      padding: 50px 50px 50px;
-     color: rgb(37, 25, 25);
+     color: #292F40;
  }
  
  .currenthabits {
-     padding: 12px 12px 12px 0;
-     display: inline-block;
+     text-align: center;
+     padding: 50px 50px 50px;
+     color: #292F40;
  }
  
  .show-container {
      border-radius: 5px;
      padding: 20px;
+ }
+ 
+ #habitlink:link,
+ #habitlink:visited {
+     background-color: #3B4259;
+     color: #BF9169;
+     padding: 14px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+ }
+ 
+ #habitlink:hover,
+ #habitlink:active {
+     background-color: rgba(140, 37, 28, 0.863);
  }
