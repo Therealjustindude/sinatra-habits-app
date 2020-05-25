@@ -88,7 +88,7 @@
  }
  
  .wrapper {
-     background: #fff;
+     background: rgba(255, 255, 255, 0.89);
      -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
      box-shadow: 0 0 10px rgba(0, 0, 0, .3);
@@ -167,17 +167,18 @@
  
  #userheading {
      text-align: center;
-     padding: 50px 50px 50px;
+     text-decoration: underline #3B4259;
+     padding: 10px;
      color: #292F40;
  }
  
- .currenthabits {
+ div.currenthabits {
      text-align: center;
      padding: 50px 50px 50px;
      color: #292F40;
  }
  
- .show-container {
+ div.show-container {
      border-radius: 5px;
      padding: 20px;
  }
