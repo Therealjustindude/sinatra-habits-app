@@ -16,10 +16,14 @@ class HabitsController < ApplicationController
     post '/habits' do 
         verify_user_logged_in
         verify_current_user
-        redirect "/habits" if params[:habit] == "" #raise error if empty
-            @habit = Habit.new(habit: params[:habit],user_id: @current_user.id)
+        if params[:habit] == "" 
+            flash[:message] = "Please do not leave Habit blank"
+            redirect "/habits" 
+        else
+            @habit = Habit.new(habit: params[:habit].downcase,user_id: @current_user.id)
             @habit.save
             redirect "/habits"
+        end
     end
 
     get '/habits/:id' do
@@ -43,7 +47,7 @@ class HabitsController < ApplicationController
         verify_user_logged_in
         
         redirect "users/#{@current_user.id}" if @current_user.id != session[:id] && params[:habit] == ""
-                @habit.update(habit: params[:habit])
+                @habit.update(habit: params[:habit].downcase)
                 redirect "/habits"
 
     end
