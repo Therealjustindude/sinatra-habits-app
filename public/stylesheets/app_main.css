@@ -1,14 +1,19 @@
  /* --- Reset Styles --- */
  
  * {
-     list-style: none;
      margin: 0;
      padding: 0;
      box-sizing: border-box;
  }
  
- html,
+ html {
+     background-color: #292F40;
+ }
+ 
  body {
+     /* color: #3B4259; */
+     font-family: Sans-Serif;
+     line-height: 18px;
      height: 100%;
      width: 100%;
  }
@@ -28,17 +33,20 @@
      overflow: hidden;
      background-color: none;
      padding: 1%;
-     box-shadow: 0 2px 14px 0 rgb(202, 204, 204), 0 5px 14px 0 rgb(100, 100, 100);
+     /* box-shadow: 0 2px 14px 0 rgba(140, 37, 28, 0.801), 0 5px 14px 0 rgb(100, 100, 100); */
  }
  /* Navbar links */
  
  .topnav a {
-     float: center;
-     display: block;
+     display: inline-block;
+     background-color: rgba(255, 255, 255, 0.753);
      color: #3B4259;
      text-align: center;
      padding: 14px 16px;
      text-decoration: none;
+     border-color: rgba(140, 37, 28, 0.87);
+     border-style: outset;
+     box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
  }
  /* Links - change color on hover */
  
@@ -47,13 +55,6 @@
      color: #BF9169;
  }
  /* --- Welcome Page Styles --- */
- 
- body {
-     background-color: #292F40;
-     color: #3B4259;
-     font-family: Sans-Serif;
-     line-height: 18px;
- }
  
  #homeheading {
      text-align: center;
@@ -88,10 +89,6 @@
  }
  
  .wrapper {
-     background: rgba(255, 255, 255, 0.89);
-     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
      margin: 16px auto;
      max-width: 960px;
      padding: 5%;
@@ -124,7 +121,7 @@
      clear: both;
  }
  
- label {
+ .col-25 label {
      padding: 12px 12px 12px 0;
      display: inline-block;
  }
@@ -172,7 +169,7 @@
      color: #292F40;
  }
  
- div.currenthabits {
+ div.current-habits {
      text-align: center;
      padding: 50px 50px 50px;
      color: #292F40;
@@ -200,3 +197,53 @@
      background-color: rgba(140, 37, 28, 0.863);
  }
  /* --- Habit Index Page Styles --- */
+ 
+ .index-container h1 {
+     padding: 40px;
+     text-align: center;
+     text-decoration: underline #3B4259;
+     background-color: rgba(255, 255, 255, 0.753);
+     border-color: rgba(140, 37, 28, 0.87);
+     border-style: outset;
+     box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
+ }
+ 
+ .index-habits h3 {
+     padding: 10px;
+     text-align: center;
+     text-decoration: underline #3B4259;
+ }
+ 
+ .index-habits {
+     overflow: hidden;
+     background-color: rgba(255, 255, 255, 0.753);
+     padding: 2%;
+     border-color: rgba(140, 37, 28, 0.87);
+     border-style: outset;
+     box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
+ }
+ /* .index-habits li {
+     display: inline-block;
+     color: #BF9169;
+     border-radius: 12px;
+     text-align: center;
+     padding: 5px;
+     text-decoration: none;
+ } */
+ 
+ .index-habits a {
+     background-color: #3B4259;
+     color: #BF9169;
+     padding: 2px;
+     text-align: center;
+     text-decoration: none;
+     border-style: outset;
+     border-color: #BF9169;
+     display: block;
+ }
+ /* Links - change color on hover */
+ 
+ .index-habits a:hover {
+     background-color: #BF9169;
+     color: rgba(140, 37, 28, 0.863);
+ }
