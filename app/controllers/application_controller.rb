@@ -33,8 +33,8 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    def verify_current_user
-      if @current_user.id != session[:user_id]
+    def verify_habits_permission
+      if @current_user.id != @habit.user_id
         flash[:error] = "You don't have permission to edit."
         redirect "users/#{@current_user.id}"
       end
