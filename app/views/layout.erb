@@ -18,7 +18,8 @@
   
     <% if logged_in? %>
       <div class="topnav">
-        <a href="/habits">Go to Habits</a>
+        <a href="/users/<%=@current_user.id%>">User Home</a>
+        <a href="/habits">Habits</a>
         <a href="/habits/new">Create Habit</a>
         <a href="/logout">Log Out</a>
       
