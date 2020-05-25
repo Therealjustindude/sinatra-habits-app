@@ -1,9 +1,9 @@
 <div class="show-container">
-<h1 id="userheading">Welcome Back <%=@user.name%>!</h1>
+<h1 id="userheading">Welcome Back <%=@user.name.capitalize%>!</h1>
 
 
     <div class="currenthabits">
-    <h4 id="userheading">Here are your current habits:</h4>
+    <h3 id="userheading">Current Habits</h3>
      <%@user.habits.each do |h|%>
         <ul>
             <li><a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit%></a></li>
