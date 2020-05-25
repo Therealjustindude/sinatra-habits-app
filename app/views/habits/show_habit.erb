@@ -12,10 +12,10 @@
 
     <br>
 
-    <form method="post" action="/habits/<%=@habit.id%>/delete">
+    <form method="post" action="/habits/<%=@habit.id%>">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
       <div id="delete-btn">
-           <input class="button" value="Delete Habit">
+           <input type="submit" class="button" value="Delete Habit">
       </div>
     </form>
     
