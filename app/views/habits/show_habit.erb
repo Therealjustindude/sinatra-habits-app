@@ -1,10 +1,24 @@
-<p><%= @habit.habit %></p>
 
-<form method="post" action="/habits/<%=@habit.id%>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Habit">
-</form>
-
-<a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
+<div class="hab-heading">
+  <h2><%= @habit.habit %></h2>
+</div>
 <br>
-<a href="/habits/new">Create a New Habit</a>
+
+  <div class="hab-container">
+
+    <div id="edit-btn">
+          <a class="button" href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
+    </div>
+
+    <br>
+
+    <form method="post" action="/habits/<%=@habit.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <div id="delete-btn">
+           <input class="button" value="Delete Habit">
+      </div>
+    </form>
+    
+  
+
+</div>
