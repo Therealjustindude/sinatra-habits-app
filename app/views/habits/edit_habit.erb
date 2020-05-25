@@ -7,10 +7,10 @@
     <form action="/habits/<%=@habit.id%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="PATCH">
             <div id="editinput">
-              <input type="text" id="habit" name="habit" placeholder=<%=@habit.habit%>>
+              <input type="text" id="habit" name="habit" placeholder=<%=@habit.habit.capitalize%>>
             </div>
             <div id="update-btn">
-              <input type="submit" class="button" value="Update <%=@habit.habit%>">
+              <input type="submit" class="button" value="Update <%=@habit.habit.capitalize%>">
             </div>
     </form>
 <br>
@@ -19,7 +19,7 @@
     <form method="post" action="/habits/<%=@habit.id%>">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
           <div id="delete-btn-edit">
-              <input type="submit" class="button" value="Delete <%=@habit.habit%>">
+              <input type="submit" class="button" value="Delete <%=@habit.habit.capitalize%>">
           </div>
     </form>
 

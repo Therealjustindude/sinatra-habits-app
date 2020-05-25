@@ -7,7 +7,7 @@
      <%@user.habits.each do |h|%>
    
 
-            <a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit%></a></li>
+            <a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit.capitalize%></a></li>
 
         <br>
      <%end%>
