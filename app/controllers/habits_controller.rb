@@ -41,12 +41,11 @@ class HabitsController < ApplicationController
     patch '/habits/:id' do
         find_habit
         verify_user_logged_in
-            if @current_user.id == session[:id] && params[:habit] != ""
+        
+        redirect "users/#{@current_user.id}" if @current_user.id != session[:id] && params[:habit] == ""
                 @habit.update(habit: params[:habit])
                 redirect "/habits"
-            else
-                redirect "users/#{@current_user.id}"
-            end
+
     end
 
     delete '/habits/:id' do
