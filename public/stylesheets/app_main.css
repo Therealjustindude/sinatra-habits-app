@@ -27,7 +27,7 @@
  .topnav {
      overflow: hidden;
      background-color: none;
-     padding: 14px 16px;
+     padding: 1%;
      box-shadow: 0 2px 14px 0 rgb(202, 204, 204), 0 5px 14px 0 rgb(100, 100, 100);
  }
  /* Navbar links */
@@ -35,7 +35,7 @@
  .topnav a {
      float: center;
      display: block;
-     color: black;
+     color: #3B4259;
      text-align: center;
      padding: 14px 16px;
      text-decoration: none;
@@ -43,8 +43,8 @@
  /* Links - change color on hover */
  
  .topnav a:hover {
-     background-color: #BF9169;
-     color: #3B4259;
+     background-color: #292F40;
+     color: #BF9169;
  }
  /* --- Welcome Page Styles --- */
  
@@ -189,10 +189,13 @@
      padding: 14px 25px;
      text-align: center;
      text-decoration: none;
-     display: inline-block;
+     border-style: outset;
+     border-color: #BF9169;
+     display: block;
  }
  
  #habitlink:hover,
  #habitlink:active {
      background-color: rgba(140, 37, 28, 0.863);
  }
+ /* --- Habit Index Page Styles --- */
