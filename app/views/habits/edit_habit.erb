@@ -1,10 +1,26 @@
-<form action="/habits/<%=@habit.user_id%>" method="POST">
-<input type="hidden" name="_method" value="PATCH">
-    <textarea name="habit" id="edit_habit"><%=@habit.habit%></textarea>
-    <input type="submit" value="Update Habit">
-</form>
+<div class="update-container">
 
-<form method="post" action="/habits/<%=@habit.id%>">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Habit">
-</form>
+      <h2> Edit Your <%=@habit.habit.capitalize%> Habit</h2>
+
+    <br>
+
+    <form action="/habits/<%=@habit.id%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <div id="editinput">
+              <input type="text" id="habit" name="habit" placeholder=<%=@habit.habit%>>
+            </div>
+            <div id="update-btn">
+              <input type="submit" class="button" value="Update <%=@habit.habit%>">
+            </div>
+    </form>
+<br>
+
+
+    <form method="post" action="/habits/<%=@habit.id%>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+          <div id="delete-btn-edit">
+              <input type="submit" class="button" value="Delete <%=@habit.habit%>">
+          </div>
+    </form>
+
+</div>
