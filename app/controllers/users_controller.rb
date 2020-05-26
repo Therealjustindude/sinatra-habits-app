@@ -39,6 +39,9 @@ class UsersController < ApplicationController
                 if @user.save
                     session[:user_id] = @user.id
                     redirect "/users/#{@user.id}" 
+                else
+                    flash[:message] = "An account is already in use with this email."
+                    redirect "/signup"
                 end
          end
     end
