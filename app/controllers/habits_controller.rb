@@ -1,15 +1,12 @@
 class HabitsController < ApplicationController
-   #read
+   
     get '/habits' do
         verify_user_logged_in
-        # verify_current_user_habits
-            @habits = @current_user.habits
             erb :"habits/habits_index"            
     end
 
     get '/habits/new' do
         verify_user_logged_in
-
              erb :'/habits/create_habit'
     end
 
@@ -19,8 +16,12 @@ class HabitsController < ApplicationController
             redirect "/habits" 
         else
             @habit = Habit.new(habit: params[:habit].downcase,user_id: @current_user.id)
-            @habit.save
-            redirect "/habits"
+            if @habit.save
+                redirect "/habits"
+            else
+                flash[:message] = "You created this habit already."
+                redirect "/habits" 
+            end
         end
     end
 
