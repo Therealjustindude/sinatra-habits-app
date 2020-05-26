@@ -4,7 +4,7 @@ class UsersController < ApplicationController
          verify_user_logged_in
          @user = User.find_by(id: params[:id])
          if @current_user.id != @user.id
-            flash[:error] = "You don't have     permission."
+            flash[:error] = "You don't have permission."
             redirect "users/#{@current_user.id}"
          else
             erb :'/users/show'
