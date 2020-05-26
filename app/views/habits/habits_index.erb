@@ -3,7 +3,7 @@
 <br>
     <div class="index-habits">
     
-        <%@habits.each do |h|%>
+        <%@current_user.habits.each do |h|%>
          
             <h3><%=h.habit.capitalize%>:</h3>
             <a href="/habits/<%=h.id%>/edit">Edit <%=h.habit.capitalize%></a>
