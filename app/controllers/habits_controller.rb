@@ -11,6 +11,7 @@ class HabitsController < ApplicationController
     end
 
     post '/habits' do 
+        verify_user_logged_in
         if params[:habit] == "" 
             flash[:message] = "Please do not leave Habit blank"
             redirect "/habits" 
@@ -26,7 +27,10 @@ class HabitsController < ApplicationController
     end
 
     get '/habits/:id' do
-        find_habit
+        if !find_habit
+            flash[:message] = "You have not created this habit yet."
+            redirect "/habits" 
+        end
         verify_user_logged_in
         verify_habits_permission
             erb :'/habits/show_habit'
@@ -42,9 +46,9 @@ class HabitsController < ApplicationController
     end
 
     patch '/habits/:id' do
-        # find_habit
-        # verify_user_logged_in
-        # verify_habits_permission
+        find_habit
+        verify_user_logged_in
+        verify_habits_permission
         redirect "users/#{@current_user.id}" if params[:habit] == ""
                 @habit.update(habit: params[:habit].downcase)
                 redirect "/habits"
