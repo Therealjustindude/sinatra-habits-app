@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200519012437) do
+ActiveRecord::Schema.define(version: 20200526180336) do
 
   create_table "habits", force: :cascade do |t|
     t.string   "habit"
-    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_habits", force: :cascade do |t|
+    t.string   "habit_id"
+    t.string   "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
