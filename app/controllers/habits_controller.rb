@@ -7,7 +7,9 @@ class HabitsController < ApplicationController
 
     get '/habits/new' do
         verify_user_logged_in
-             erb :'/habits/create_habit'
+    
+        @habits = Habit.all
+        erb :'/habits/create_habit'
     end
 
     post '/habits' do 
@@ -29,15 +31,14 @@ class HabitsController < ApplicationController
     end
 
     get '/habits/:id' do
-
         if !find_habit
-            flash[:message] = "You have not created this habit yet."
-            redirect "/habits" 
-        end 
-        verify_user_logged_in
-        verify_habits_permission
-        erb :'/habits/show_habit'
-      
+             flash[:message] = "You have not created this habit yet."
+             redirect "/habits" 
+        else
+            verify_user_logged_in
+            verify_habits_permission
+            erb :'/habits/show_habit'   
+        end
     end
 
     get '/habits/:id/edit' do
