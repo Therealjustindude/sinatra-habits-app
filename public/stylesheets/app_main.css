@@ -382,6 +382,15 @@
  }
  /* --- Create Habit Page Styles --- */
  
+ .habits-list {
+     padding: 10px;
+     text-align: center;
+     background-color: rgba(255, 255, 255, 0.753);
+     border-color: rgba(140, 37, 28, 0.87);
+     border-style: outset;
+     box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
+ }
+ 
  .create-container {
      padding: 40px;
      text-align: left;
@@ -391,8 +400,13 @@
      box-shadow: 0 2px 4px 0 rgba(140, 37, 28, 0.801), 0 2px 4px 0 rgb(100, 100, 100);
  }
  
- .create-container h2 {
-     padding: 10px;
+ .create-container h1 {
+     padding: 20px;
      text-align: center;
      text-decoration: underline #3B4259;
+ }
+ 
+ .select-form li {
+     padding: 10px;
+     text-align: center;
  }
