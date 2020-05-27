@@ -32,13 +32,6 @@ class ApplicationController < Sinatra::Base
         redirect '/login'
       end
     end
-
-    def verify_habits_permission
-      if @current_user.habits.include?(@habit.id)
-        flash[:error] = "You don't have access to this habit."
-        redirect "users/#{@current_user.id}"
-      end
-    end
     
     def find_habit
       @habit = Habit.find_by(id: params[:id])
