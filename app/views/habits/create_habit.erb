@@ -21,7 +21,7 @@
             <ul>
                 <li>
                     <input type="checkbox" value="<%=h.id%>" name="habit_id">
-                    <label for="<%=h.habit%>"><%=h.habit%></label>
+                    <label for="<%=h.habit%>"><%=h.habit.capitalize%></label>
                 </li>
             </ul>
             <%end%>
@@ -30,8 +30,6 @@
 <hr>
 <br>
     <h4 style="text-align: center;">Or</h4>
-<br>
-<hr>
 <br>
     <div class="row">
         <div class="col-25">
