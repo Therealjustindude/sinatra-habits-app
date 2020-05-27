@@ -3,11 +3,11 @@
 
 
     <div class="current-habits">
-    <h3 id="userheading">Current Habits</h3>
+    <h3 id="userheading">Your Current Habits</h3>
      <%@user.habits.each do |h|%>
    
 
-            <a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit.capitalize%></a></li>
+            <a id="habitlink" href="/habits/<%= h.id%>"><%= h.habit.capitalize%></a>
 
         <br>
      <%end%>
