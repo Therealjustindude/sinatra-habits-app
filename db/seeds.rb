@@ -8,8 +8,8 @@ code = Habit.create(habit: "coding")
 test = Habit.create(habit: "test")
 write = Habit.create(habit: "writing")
 
-justin.habits = [read, code, test]
-cinthia.habits = [read, write, test]
+justin.habits << test
+cinthia.habits << test
 
 
 
