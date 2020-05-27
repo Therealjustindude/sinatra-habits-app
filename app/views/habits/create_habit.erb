@@ -1,16 +1,38 @@
 <div class="create-container">
 
 
-    <h2>Create A New Habit <%=@current_user.name.capitalize%>!</h2>
+    <h1>Create A New Habit <%=@current_user.name.capitalize%>!</h1>
 
 
 <br>
 <hr>
 <br>
 
-<%# SHOW LIST OF AVAILABLE/CREATED HABITS FOR A USER TO CHOOSE FROM IF THEY DON'T SEE A HABIT THEY CAN CREATE ONE %>
+
 
 <form action="/habits" method="POST">
+    
+        <h4 style="text-align: center;">Pick A Habit From List</h4>
+<br>
+<hr>
+<br>
+        <div class="select-form">
+            <%@habits.each do |h|%>
+            <ul>
+                <li>
+                    <input type="checkbox" value="<%=h.id%>" name="habit_id">
+                    <label for="<%=h.habit%>"><%=h.habit%></label>
+                </li>
+            </ul>
+            <%end%>
+    </div>
+<br>
+<hr>
+<br>
+    <h4 style="text-align: center;">Or</h4>
+<br>
+<hr>
+<br>
     <div class="row">
         <div class="col-25">
          <label>New Habit:</label>
