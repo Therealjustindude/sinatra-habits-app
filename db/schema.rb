@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20200526180336) do
   end
 
   create_table "user_habits", force: :cascade do |t|
-    t.string   "habit_id"
-    t.string   "user_id"
+    t.integer  "habit_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
