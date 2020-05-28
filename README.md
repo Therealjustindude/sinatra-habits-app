@@ -26,9 +26,7 @@ Habitual Habits is a Model-View-Controller Sinatra application that allows a use
 * [Corneal](https://github.com/thebrianemory/corneal)
 * [dotenv](https://github.com/motdotla/dotenv)
 * [sysrandom](https://github.com/cryptosphere/sysrandom)
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Sinatra](https://github.com/sinatra/sinatra) - The web framework used
 
 ## License
 
