@@ -15,7 +15,7 @@ class HabitsController < ApplicationController
         verify_user_logged_in
        
         found_habit= Habit.find_by_id(params[:habit_id])
-        # binding.pry
+        
         @current_user.habits << found_habit if found_habit && !(@current_user.associated_habit?(found_habit))
         
         new_habit = Habit.new(habit: params[:habit].downcase) if params[:habit].present?
