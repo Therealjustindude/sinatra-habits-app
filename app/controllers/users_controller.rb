@@ -2,8 +2,8 @@ class UsersController < ApplicationController
     
     get '/users/:id' do
          verify_user_logged_in
-         @user = User.find_by(id: params[:id])
-         if !@user || @current_user.id != @user.id
+         user = User.find_by(id: params[:id])
+         if !user || @current_user.id != user.id
             flash[:error] = "You can't view that Users page."
             redirect "users/#{@current_user.id}"
          else
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     end
 
     post '/login' do
-        @user = User.find_by(email: params[:email])
-        if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.id
-            redirect "/users/#{@user.id}"
+        user = User.find_by(email: params[:email])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect "/users/#{user.id}"
         else
             flash[:error] = "Your email or password does not match"
             redirect "/login"
@@ -35,10 +35,10 @@ class UsersController < ApplicationController
             flash[:message] = "Please do not leave anything blank"
             redirect "/signup"
          else
-            @user= User.new(name: params[:name].downcase, email: params[:email], password: params[:password])
+            user= User.new(name: params[:name].downcase, email: params[:email], password: params[:password])
                 if @user.save
-                    session[:user_id] = @user.id
-                    redirect "/users/#{@user.id}" 
+                    session[:user_id] = user.id
+                    redirect "/users/#{user.id}" 
                 else
                     flash[:message] = "An account is already in use with this email."
                     redirect "/signup"
