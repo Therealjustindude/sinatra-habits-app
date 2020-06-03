@@ -2,8 +2,8 @@ class UsersController < ApplicationController
     
     get '/users/:id' do
          verify_user_logged_in
-         user = User.find_by(id: params[:id])
-         if !user || @current_user.id != user.id
+         @user = User.find_by(id: params[:id])
+         if !@user || @current_user.id != @user.id
             flash[:error] = "You can't view that Users page."
             redirect "users/#{@current_user.id}"
          else
