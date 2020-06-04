@@ -36,7 +36,7 @@ class UsersController < ApplicationController
             redirect "/signup"
          else
             user= User.new(name: params[:name].downcase, email: params[:email], password: params[:password])
-                if @user.save
+                if user.save
                     session[:user_id] = user.id
                     redirect "/users/#{user.id}" 
                 else
