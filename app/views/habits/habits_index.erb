@@ -4,9 +4,8 @@
     <div class="index-habits">
     
         <%@current_user.habits.each do |h|%>
-         
-            <h3><%=h.habit.capitalize%>:</h3>
-            <a href="/habits/<%=h.id%>/edit">Edit <%=h.habit.capitalize%></a>
+
+            <a href="/habits/<%=h.id%>"><%=h.habit.capitalize%></a>
             <br>
 
         <% end %>
