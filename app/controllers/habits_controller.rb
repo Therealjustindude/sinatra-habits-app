@@ -36,7 +36,7 @@ class HabitsController < ApplicationController
         end
        
         if @current_user.associated_habit?(@habit)
-            erb :'habits/edit_habit'
+            erb :'habits/show_habit'
         else
             flash[:message] = "You have not created this habit yet."
             redirect "/habits" 
